@@ -43,7 +43,7 @@ To enter into the nightly tournaments, your team's agents and all relevant funct
 [pacai.student.capture.py](https://github.com/edulinq/pacai/blob/v2.0.1/pacai/student/capture.py).
 
 Every team must have a unique name,
-consisting only of ASCII letters and digits (any other characters, including whitespace, will be ignored).
+consisting only of [alphanumeric](https://en.wikipedia.org/wiki/Alphanumericals) characters (any other characters, including whitespace, will be not allowed).
 
 Instructions for forming groups (using Google Forms) will be posted on Canvas in the lead-up to the assignment.
 You must submit your team info (team name, motto and list of members).
@@ -85,22 +85,16 @@ Through this report we expect you to demonstrate your ability to constructively 
 
 <!-- TODO(Batu, Niloofar): Review the grading scheme. -->
 ## Points & Teams
-
 A portion of your grade will be based on performance against the following staff agents:
- - `_baseline`
- - `_baseline_2`
- - `_staff_SlugTrap`
- - `_staff_SomeSlug`
- - `_staff_SlugBrain`
- - `_teamTA_w17`
- - `_staff_ta_22`
- - `_staff_trappingAgent`
+ - `staff_baseline`
+ - `staff_PhantomSlug`
+ - TBD
 
 Points are also awarded as follows:
  - If you lose to the dummy agent, zero points will be awarded for this section.
- - 10 points for beating the `_baseline agent`.
+ - 10 points for beating the `staff_baseline` agent.
  - +5 points for beating one additional staff agent.
- - +5 points for beating 2 staff agents (in addition to `_baseline`), OR.
+ - +5 points for beating 2 staff agents (in addition to `staff_baseline`), OR.
    - +1 points for being in the top 50%.
    - +2 points for being in the top 40%.
    - +3 points for being in the top 30%.
@@ -108,6 +102,7 @@ Points are also awarded as follows:
    - +5 points for being in the top 10%.
  - +1 Extra Credit point for being the number one team.
 
+For the purposes of the points system, we define ‘beating’ an agent as winning against that agent both when playing as red and as blue.
 <!-- How we compute the percentiles based on the ranking of the teams is described below in [Contest Details](#contest-details). -->
 
 ### Academic Dishonesty
@@ -253,13 +248,17 @@ with the final tournament deciding the final contest outcomes.
 See the submission instructions for details of how to enter a team into the tournaments.
 Tournaments are run every night (refer to Canvas for nightly cut off) and include all teams that have been submitted
 (either earlier in the day or on a previous day) as of the start of the tournament.
-Currently, each team plays every other team 11 times in one match.
+Currently, each team is matched up with every other team two times (each matchup consists of 11 games).
+In the first match, one team is `red` and the other is `blue`.
+In the second match, they switch sides (the `red` team plays as `blue`, and the `blue` team plays as `red`).
+This ensures you don’t hard-code any color specific behavior or assumptions.
 
 The boards used in the tournament will be drawn from both the default board (5 games),
 as well as randomly generated boards (6 games).
 All boards are symmetric, and the team that moves first is randomly chosen.
-The results for a nightly tournaments can be found [here](http://seacliff.soe.ucsc.edu/cse140-w25/tournaments/), where you can view overall rankings and scores for each match.
+The results for a nightly tournaments can be found [here](http://seacliff.soe.ucsc.edu/cse140-f25/tournaments/), where you can view overall rankings and scores for each match.
 You can also download replays, the boards used, and the stdout / stderr logs for each agent.
+When examining replay JSON files, the CLI of json [module](https://docs.python.org/3/library/json.html#module-json.tool) may be helpful.
 
 ## Designing Agents
 
