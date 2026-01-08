@@ -12,16 +12,25 @@ For orders: [('apples', 3.0)] best shop is shop2.
 """
 
 import shop
+import sys
 
 def shopSmart(orderList, fruitShops):
     """
     orderList: List of (fruit, numPound) tuples
     fruitShops: List of FruitShops
     """
-
+    """sets bestPrice to maximum possible value so any shop will be lower cost which sets bestShop on the first iteration, then we loop through all the fruitShops and compare the prices to get the minimum until we compared all fruitShops and return the loewst price shop"""
+    bestPrice = sys.maxsize
     # *** Your Code Here ***
-
-    return None
+    if fruitShops == None:
+        print("Error: Not given any fruitShops")
+        return None
+    for shop in fruitShops:
+        price = shop.getPriceOfOrder(orderList)
+        if price < bestPrice:
+            bestPrice = price
+            bestShop = shop
+    return bestShop
 
 def main():
     dir1 = {

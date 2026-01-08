@@ -27,10 +27,15 @@ def buyLotsOfFruit(orderList):
 
     Returns cost of order
     """
-
-    # *** Your Code Here ***
-
-    return None
+    totalPrice = 0.0
+    """loops over each fruit, weight pair in the orderlist and adds each price of fruit * the weight of each
+    fruit to the total price. Prints error message and returns None if any fruits are not in the FRUIT_PRICES dictionary"""
+    for fruit, weight in orderList:
+        if fruit not in FRUIT_PRICES:
+            print("Error: Sorry we don't have %s" %(fruit))
+            return None
+        totalPrice += FRUIT_PRICES[fruit] * weight
+    return totalPrice
 
 def main():
     orderList = [
