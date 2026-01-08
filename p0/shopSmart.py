@@ -20,13 +20,14 @@ def shopSmart(orderList, fruitShops):
     fruitShops: List of FruitShops
     """
     # *** Your Code Here ***
-    #sets bestPrice to maximum possible value
+
+    # sets bestPrice to maximum possible value
     bestPrice = sys.maxsize
     #Checks edge case error that we are not given fruitShops
     if fruitShops is None:
         print("Error: Not given any fruitShops")
         return None
-    #We loop through all the fruitShops
+    # We loop through all the fruitShops
     for shops in fruitShops:
         price = shops.getPriceOfOrder(orderList)
         # Updates bestPrice and bestShop to be minimum price and shop
