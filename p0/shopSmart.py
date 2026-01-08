@@ -23,7 +23,7 @@ def shopSmart(orderList, fruitShops):
 
     # sets bestPrice to maximum possible value
     bestPrice = sys.maxsize
-    #Checks edge case error that we are not given fruitShops
+    # Checks edge case error that we are not given fruitShops
     if fruitShops is None:
         print("Error: Not given any fruitShops")
         return None
